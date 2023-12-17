@@ -16,13 +16,21 @@ public class Order {
     @GeneratedValue
     @Column(name = "order_id")
     private Long id;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member; //주문 회원
 
+    @OneToMany(mappedBy="order")
     private List<OrderItem> orderItems = new ArrayList<>();
+
+    @OneToOne
+    @JoinColumn(name ="delivery_id")
     private Delivery delivery;
+
     private LocalDateTime orderDate;
-    private OrderStatus status;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status; //ORDER, CANCEL
 
 }
