@@ -22,7 +22,10 @@ public class Member {
     private Address address;
 
     @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>(); // <- 이컬렉션은 가급적 바꾸지 않고 그대로 둔다
+
+
+
 
 
 }
