@@ -45,5 +45,5 @@ public class MemberService {
         return memberRepository.findOne(memberId);
     }
 
-    //회원 전체 조회
+
 }
